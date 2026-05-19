@@ -20,7 +20,11 @@
 <body>
 <main class="hero">
   <picture class="hero__bg">
+    <source media="(max-width: 720px)" type="image/avif" srcset="/assets/hero-mobile.avif">
+    <source media="(max-width: 720px)" type="image/webp" srcset="/assets/hero-mobile.webp">
     <source media="(max-width: 720px)" srcset="/assets/hero-mobile.jpg">
+    <source type="image/avif" srcset="/assets/hero-desktop.avif">
+    <source type="image/webp" srcset="/assets/hero-desktop.webp">
     <img src="/assets/hero-desktop.jpg" alt="" fetchpriority="high">
   </picture>
 
