@@ -22,7 +22,155 @@
 <meta name="twitter:image" content="https://gnash.app/assets/og-image.jpg">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/style.css">
+<link rel="preload" as="image" type="image/avif" href="/assets/hero-mobile.avif" media="(max-width: 720px)">
+<link rel="preload" as="image" type="image/avif" href="/assets/hero-desktop.avif" media="(min-width: 721px)">
+<style>
+:root {
+  --green: #34c759;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --text-faint: rgba(255, 255, 255, 0.62);
+  --bg: #1a1a1a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { cursor: default; }
+
+a { color: inherit; text-decoration: none; cursor: pointer; }
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 45%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px clamp(24px, 5vw, 72px);
+}
+
+.hero__text {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: var(--green);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: clamp(40px, 5.2vw, 68px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.rating {
+  margin: 0 0 10px;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.003em;
+  color: var(--text);
+}
+
+.privacy {
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 0.005em;
+  color: var(--text-faint);
+  transition: color 0.15s ease;
+}
+
+.privacy:hover { color: var(--text-muted); }
+
+.app-store {
+  flex-shrink: 0;
+  display: inline-block;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.app-store img {
+  display: block;
+  height: 56px;
+  width: auto;
+}
+
+.app-store:hover { opacity: 0.85; }
+.app-store:active { transform: scale(0.98); }
+
+@media (max-width: 720px) {
+  .hero__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 28px 20px;
+  }
+  .hero__text { max-width: 100%; }
+  .eyebrow {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  h1 {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 1.1;
+  }
+  .rating {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  .privacy { font-size: 13px; }
+  .app-store { align-self: center; }
+  .app-store img { height: 44px; }
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,7 +194,7 @@
     <source media="(max-width: 720px)" srcset="/assets/hero-mobile.jpg">
     <source type="image/avif" srcset="/assets/hero-desktop.avif">
     <source type="image/webp" srcset="/assets/hero-desktop.webp">
-    <img src="/assets/hero-desktop.jpg" alt="" fetchpriority="high">
+    <img src="/assets/hero-desktop.jpg" alt="" fetchpriority="high" decoding="async">
   </picture>
 
   <div class="hero__content">
