@@ -19,6 +19,12 @@
   --bg: #1a1a1a;
 }
 
+@supports (color: color(display-p3 1 1 1)) {
+  :root { --green: color(display-p3 0.204 0.78 0.349); }
+}
+
+@view-transition { navigation: auto; }
+
 * { box-sizing: border-box; }
 
 html, body {

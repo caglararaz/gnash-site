@@ -33,6 +33,12 @@
   --bg: #1a1a1a;
 }
 
+@supports (color: color(display-p3 1 1 1)) {
+  :root { --green: color(display-p3 0.204 0.78 0.349); }
+}
+
+@view-transition { navigation: auto; }
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -109,6 +115,7 @@ h1 {
   line-height: 1.08;
   letter-spacing: 0;
   font-weight: 600;
+  text-wrap: balance;
 }
 
 .rating {
@@ -200,7 +207,7 @@ h1 {
   <div class="hero__content">
     <div class="hero__text">
       <p class="eyebrow">Nicotine Quit App</p>
-      <h1>Ease off nicotine,<br>one break at a time.</h1>
+      <h1>Ease off nicotine, one break at a time.</h1>
       <p class="rating">4.9 out of 5 Rating on App Store</p>
       <a class="privacy" href="/privacy.html">Privacy Policy</a>
     </div>
