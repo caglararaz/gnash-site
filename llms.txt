@@ -8,10 +8,10 @@
 - App Store: https://apps.apple.com/app/id6757307683
 - Works for cigarettes, vaping, and snus
 - Approach: gradual reduction at your own pace, not cold-turkey quitting
-- Privacy: collects zero data — no analytics, no ads, no trackers. All data stays in the user's personal iCloud (Apple CloudKit); the developer cannot read it. See https://gnash.app/privacy.html
+- Privacy: no account, no analytics, no ads, no trackers. Logs live on the phone and, unless the user turns sync off, in the user's own iCloud, which the developer cannot read. The only things that leave the phone are a timed nudge for the Lock Screen timer, feedback the user chooses to send, and App Store purchases handled by Apple. See https://gnash.app/privacy.html
 - Made by Caglar Araz
 
 ## Pages
 
 - [Home](https://gnash.app/): App overview and App Store download link
-- [Privacy Policy](https://gnash.app/privacy.html): Full privacy policy — zero data collection, iCloud-only storage, user-controlled deletion
+- [Privacy](https://gnash.app/privacy.html): What the app keeps, where it lives, what leaves the phone, and how to delete it

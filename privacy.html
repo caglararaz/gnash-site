@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1a1a1a">
 <title>Gnash — Privacy</title>
-<meta name="description" content="Gnash collects zero data. All data stays on your device. No servers, no tracking, no data collection.">
+<meta name="description" content="What Gnash keeps, what leaves your phone, and how to delete it. Written by the one person who made it.">
 <meta name="apple-itunes-app" content="app-id=6757307683">
 <link rel="canonical" href="https://gnash.app/privacy.html">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
@@ -43,54 +43,208 @@ body { cursor: default; }
 a { color: inherit; text-decoration: none; cursor: pointer; }
 
 .doc {
-  max-width: 720px;
+  max-width: 980px;
   margin: 0 auto;
   padding: clamp(48px, 8vw, 96px) clamp(24px, 5vw, 48px);
 }
 
 .doc--center { text-align: center; }
 
-.doc .eyebrow {
-  margin: 0 0 16px;
+.doc .kicker {
+  margin: 0 0 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--green);
-  font-size: 16px;
+}
+
+.doc .kicker span {
+  margin-left: 14px;
   font-weight: 500;
+  color: var(--text-faint);
 }
 
 .doc h1 {
-  margin: 0 0 32px;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+  font-size: clamp(48px, 6.2vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   font-weight: 600;
+  text-wrap: balance;
 }
 
 .doc h2 {
-  margin: 56px 0 16px;
-  font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing: -0.015em;
+  margin: 0 0 24px;
+  padding-top: clamp(72px, 9vw, 120px);
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: 0;
   font-weight: 600;
   color: var(--text);
+  text-wrap: balance;
 }
 
 .doc p {
-  margin: 0 0 16px;
-  font-size: 17px;
-  line-height: 1.6;
+  margin: 0 0 18px;
+  max-width: 720px;
+  font-size: 19px;
+  line-height: 1.47;
+  letter-spacing: -0.01em;
   color: var(--text-muted);
 }
 
-.doc .lede {
-  font-size: 20px;
-  line-height: 1.55;
-  color: var(--text);
-  margin-bottom: 24px;
+.doc .items {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
 }
 
-.doc .updated {
-  font-size: 14px;
+.doc .items li {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 8px 40px;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+}
+
+.doc .items strong {
+  display: block;
+  font-size: 21px;
+  line-height: 1.19;
+  margin-bottom: 6px;
+}
+
+.doc .items .summary {
+  display: block;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.doc .items p {
+  margin: 0;
+  font-size: 17px;
+}
+
+@media (max-width: 640px) {
+  .doc .items li {
+    grid-template-columns: 1fr;
+    padding: 20px 22px;
+  }
+}
+
+.doc .answers {
+  margin: 0;
+  padding: 0;
+}
+
+.doc .answers div {
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.doc .answers div:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.doc .answers dt {
+  margin: 0 0 6px;
+  font-size: clamp(21px, 2vw, 24px);
+  line-height: 1.17;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  color: var(--text);
+}
+
+.doc .answers dd {
+  margin: 0;
+  max-width: 720px;
+  font-size: 19px;
+  line-height: 1.47;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+}
+
+.doc .divider {
+  max-width: none;
+  margin: clamp(72px, 9vw, 120px) 0 0;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.doc .divider + h2 {
+  padding-top: 12px;
+}
+
+.doc h3 {
+  margin: 40px 0 8px;
+  font-size: clamp(21px, 2vw, 24px);
+  line-height: 1.17;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  color: var(--text);
+}
+
+.doc .byline {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-size: 16px;
   color: var(--text-faint);
-  margin-bottom: 0;
+  margin: 0;
+}
+
+.doc .byline b {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.doc .back {
+  display: inline-block;
+  margin: 0 0 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-decoration: none;
+}
+
+.doc .back:hover { color: var(--text); }
+
+.doc .footnote {
+  margin-top: 48px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-faint);
+}
+
+.doc strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.doc .deck {
+  font-size: clamp(24px, 2.4vw, 28px);
+  line-height: 1.29;
+  font-weight: 400;
+  letter-spacing: 0.007em;
+  color: var(--text);
+  margin: 0 0 28px;
+  max-width: 820px;
+  text-wrap: pretty;
 }
 
 .doc a {
@@ -117,40 +271,75 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 </head>
 <body>
 <article class="doc">
-  <p class="eyebrow">Privacy Policy</p>
-  <h1>Your data is yours.<br>Never seen or shared.</h1>
-  <p class="lede">Gnash is built around a simple idea: you shouldn't have to give up your privacy to change your relationship with nicotine. We don't track you or show ads, and we can't see your data. Everything you enter stays private, encrypted, and in your iCloud.</p>
-  <p class="updated">Last updated: January 8, 2026</p>
+  <a class="back" href="/">← Gnash</a>
+  <p class="kicker">Privacy <span>Updated September 4, 2026</span></p>
+  <h1>I can't see your logs.<br>Nobody can.</h1>
+  <p class="deck">No account, no sign-up, and no way for me to read what you log.</p>
+  <p>I made Gnash to help people use less nicotine, and that's a private thing. So I built it to know as little about you as possible. Here's the whole picture, in plain words.</p>
+  <p class="byline"><b>Caglar Araz, who made Gnash</b></p>
 
-  <h2>What data Gnash uses</h2>
-  <p>Gnash stores only the information you explicitly choose to enter into the app. This includes things like your nicotine logs, reflections, and app settings that help Gnash function as intended.</p>
-  <p>That data exists solely so the app can work for you. Gnash does not collect usage analytics, crash analytics, advertising identifiers, location data, or any other information used for tracking, profiling, or marketing.</p>
-  <p>There are no hidden data flows and no background collection.</p>
+  <h2>Straight answers</h2>
+  <dl class="answers">
+    <div>
+      <dt>Can you see my logs?</dt>
+      <dd>No. There's no account, and the app has no way to send them to me.</dd>
+    </div>
+    <div>
+      <dt>Can anyone learn from Gnash that I use nicotine?</dt>
+      <dd>Not from me. I never have that information, so I can't share it, sell it, or hand it over.</dd>
+    </div>
+    <div>
+      <dt>Can I delete everything?</dt>
+      <dd>Yes. One button in Settings, and it takes the iCloud copy with it.</dd>
+    </div>
+    <div>
+      <dt>Why should I believe this?</dt>
+      <dd>Try Gnash in Airplane Mode: logging, the timer, the Moodballs, all of it works. And <a href="https://apps.apple.com/app/id6757307683">Gnash's page on the App Store</a> carries a <a href="https://support.apple.com/en-us/102399">privacy label</a> that says the same as this page.</dd>
+    </div>
+  </dl>
 
-  <h2>Where your data lives</h2>
-  <p>All Gnash data is stored in your personal iCloud account using Apple's CloudKit. This means your data is encrypted by Apple, tied to your Apple ID, and synced only between devices you own. Gnash does not operate its own servers or databases for personal data, and nothing is stored outside of iCloud.</p>
-  <p>Because of this setup, your data never passes through Gnash infrastructure in a readable form.</p>
+  <p class="divider">The details</p>
 
-  <h2>Access to your data</h2>
-  <p>We do not have the ability to read your logs, view your reflections, or inspect how you use the app. There is no admin panel, no internal dashboard, and no backdoor access. Your data is private by design, not by policy.</p>
+  <h2>It keeps what you log. Nothing about who you are.</h2>
+  <p>Your breaks, when they started and ended, how they felt, the notes you write, and the plan you set. A few settings, like your theme. Nothing about who you are: Gnash never asks for your name or email, and there is nothing to sign up for.</p>
 
-  <h2>What Gnash does not do</h2>
-  <p>Gnash does not track behavior, collect analytics, serve ads, sell data, or share information with third parties.</p>
-  <p>There are no analytics SDKs, no advertising frameworks, and no trackers embedded in the app. There is nothing to opt out of, because these systems simply do not exist in Gnash.</p>
+  <h2>It lives on your phone, and in your iCloud.</h2>
+  <p>On your phone, and in your own iCloud, so your logs follow you to a new phone. The iCloud copy sits in your private storage, <a href="https://support.apple.com/en-us/102651">encrypted by Apple</a>, in a space I have no way into. There is no Gnash server with your logs on it.</p>
+  <p>You can turn iCloud sync off in Settings. Then everything stays on the phone.</p>
 
-  <h2>Your control over your data</h2>
-  <p>You remain in full control of your data at all times. You can delete your data from within the app, export it if you want to keep a copy, or disable iCloud syncing through your device settings. You can also remove Gnash's data directly from iCloud using Apple's iCloud management tools.</p>
-  <p>If you delete the app and remove its associated iCloud data, your data is permanently deleted.</p>
+  <h2>Three things leave your phone. Only these.</h2>
+  <ul class="items">
+    <li>
+      <div><strong>The Lock Screen timer</strong><span class="summary">The moment your break ends, so the screen flips on time.</span></div>
+      <p>When a break starts, the app tells a tiny server I run when the break will reach its goal, plus a one-off key iOS gives it for that timer. At the goal, the server asks Apple to refresh your Lock Screen, then forgets what it had. The key can't be traced to you or your logs. Offline when the break starts? Nothing is sent, and the Lock Screen catches up on its own.</p>
+    </li>
+    <li>
+      <div><strong>Feedback you send</strong><span class="summary">Your message, and your email only if you add it.</span></div>
+      <p>Your message and the app version go to a service that forwards them to my inbox. Nothing else is attached.</p>
+    </li>
+    <li>
+      <div><strong>Gnash Pro</strong><span class="summary">A purchase, handled by Apple.</span></div>
+      <p><a href="https://www.apple.com/legal/privacy/data/en/app-store/">Apple handles the purchase</a>, like any other. The app learns you're Pro. I never see your payment details.</p>
+    </li>
+  </ul>
+  <p>Nothing else from the app. No analytics, no ads, no trackers, nothing sold or shared.</p>
+  <p>Apple separately shows me anonymous numbers, like download counts, and crash reports from people who <a href="https://support.apple.com/en-us/108971">chose to share them in their iPhone settings</a>. That's Apple's collection, under <a href="https://www.apple.com/legal/privacy/data/en/app-analytics/">Apple's policy</a>, and I can't switch it off.</p>
 
-  <h2>iCloud requirement</h2>
-  <p>Gnash requires iCloud to function. This is a deliberate choice. Using iCloud allows Gnash to rely on Apple's encryption and security infrastructure while avoiding the need to collect or manage user data on our own servers. If iCloud is disabled, Gnash cannot store or sync your data.</p>
-  <p>Because Gnash uses Apple's CloudKit, Apple is responsible for data storage, encryption, and underlying security. Apple's privacy policies apply to data stored in iCloud, and Gnash operates within Apple's App Store privacy guidelines.</p>
+  <h2>One button deletes everything.</h2>
+  <p>Settings has a button that wipes everything: your logs, your plan, and your settings. With sync on, the deletion reaches your iCloud copy too. Export first if you want to keep a copy.</p>
+  <p>If you turned sync off at some point, an older copy may still be in your iCloud. You can remove it yourself: Settings, your name at the top, iCloud, Manage Storage, Gnash. <a href="https://support.apple.com/en-us/108922">Apple's guide</a> walks through it.</p>
 
-  <h2>Children and age considerations</h2>
-  <p>While the animated mood balls can be enjoyed by people of any age, Gnash is intended for adults who are addicted to nicotine and want to quit or reduce their use. The app doesn't collect personal data from anyone, but its content discusses nicotine and tobacco, which is why it carries an age rating.</p>
+  <h2>A few other things.</h2>
+  <h3>Motion</h3>
+  <p>The Moodballs roll when you tilt or shake your phone. That uses the motion sensor in the moment, on the phone. Nothing is recorded.</p>
+  <h3>Age</h3>
+  <p>Gnash is for adults who use nicotine and want less of it. It's rated 17+ because it talks about smoking, vaping and snus, not because of anything it collects.</p>
+  <h3>If any of this changes</h3>
+  <p>The date at the top changes, and the app tells you in What's New.</p>
+  <h3>Questions</h3>
+  <p>Email <a href="mailto:hello@gnash.app">hello@gnash.app</a>. I read every one.</p>
 
-  <h2>Questions or concerns?</h2>
-  <p>If anything here is unclear or you want to understand more about how Gnash or CloudKit works, you can email us at <a href="mailto:hello@gnash.app">hello@gnash.app</a>. We're happy to explain. Privacy matters, and you deserve clear answers.</p>
+  <p class="footnote">For the curious: the feedback service is Formspree, the timer server runs on Cloudflare, and the iCloud storage is Apple's CloudKit.</p>
 
   <footer class="doc__footer">
     <p>© 2026 · By Caglar Araz</p>
